@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+    - '**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        emacs_version:
+          - 25.1
+          - 25.2
+          - 25.3
+          - 26.1
+          - 26.2
+          - 26.3
+          - snapshot
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: purcell/setup-emacs@v1.0
+      with:
+        version: ${{ matrix.emacs_version }}
+
+    - uses: leotaku/elisp-check@v1.0
+      with:
+        file: "*.el"
+
+    - uses: leotaku/elisp-check@v1.0
+      with:
+        check: ert
+        file: "test/dorg-tests.el"
