@@ -4,6 +4,9 @@
 
 ;; Author: Oleg Pykhalov <go.wigust@gmail.com>
 ;; Keywords: extensions
+;; URL: https://github.com/kitnil/dorg
+;; Version: 1.0.1
+;; Package-Requires: ((emacs "25"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
