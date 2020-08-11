@@ -57,6 +57,7 @@
   (alist-get 'pending
              (car (debbugs-get-status (string-to-number bug-number)))))
 
+;;;###autoload
 (defun dorg-bug-update ()
   "Update Org-entry at point."
   (interactive)
@@ -68,6 +69,7 @@
                         "DONE"))
         (org-todo 'done)))))
 
+;;;###autoload
 (defun dorg-bugs-update ()
   "Update all Org-entries in current buffer."
   (interactive)
