@@ -6,7 +6,7 @@
 ;; Keywords: extensions
 ;; URL: https://github.com/kitnil/dorg
 ;; Version: 1.0.1
-;; Package-Requires: ((emacs "25"))
+;; Package-Requires: ((emacs "25.1") (debbugs "0.25"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

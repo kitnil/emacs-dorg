@@ -2,6 +2,8 @@
 
 ;; Copyright (C) 2020  Oleg Pykhalov
 
+;; Package-Requires: ((el-mock "1.25.1"))
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
