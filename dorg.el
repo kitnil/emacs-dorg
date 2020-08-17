@@ -65,9 +65,7 @@
     (if (or (not bug-number)
             (equal (dorg-bug-status bug-number) "pending"))
         (message (format "%s is still open." bug-number))
-      (when (not (equal (substring-no-properties (org-get-todo-state))
-                        "DONE"))
-        (org-todo 'done)))))
+      (org-todo 'done))))
 
 ;;;###autoload
 (defun dorg-bugs-update ()
