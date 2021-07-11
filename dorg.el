@@ -44,11 +44,21 @@
   :type 'regexp
   :group 'dorg)
 
+(defcustom dorg-regexp-guix-issue
+  (rx line-start (one-or-more anything)
+      "http" (zero-or-one "s") "://issues.guix.gnu.org/"
+      (zero-or-one "issue/") (group (one-or-more numeric))
+      (one-or-more anything) line-end)
+  "Regexp matching bug on Guix issue."
+  :type 'regexp
+  :group 'dorg)
+
 (defun dorg-bug-number ()
   "Get bug number from Org-mode entry at point."
   (let ((org-entry (buffer-substring (org-entry-beginning-position)
                                      (org-entry-end-position))))
-    (if (string-match dorg-regexp-bug org-entry)
+    (if (or (string-match dorg-regexp-bug org-entry)
+            (string-match dorg-regexp-guix-issue org-entry))
         (substring-no-properties (match-string 1 org-entry))
       nil)))
 
