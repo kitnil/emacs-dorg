@@ -81,6 +81,7 @@
 (defun dorg-bugs-update ()
   "Update all Org-entries in current buffer."
   (interactive)
+  (dorg-bug-update)
   (while (org-get-next-sibling)
     (dorg-bug-update)))
 
